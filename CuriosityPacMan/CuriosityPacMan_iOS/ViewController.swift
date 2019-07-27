@@ -12,8 +12,8 @@ import MultipeerConnectivity
 class ViewController: UIViewController {
     
     lazy var peerID = MCPeerID(displayName: UIDevice.current.name)
-    lazy var mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .optional)
-//    lazy var mcBrowser = 
+    lazy var mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
+    lazy var mcBrowser = MCBrowserViewController(serviceType: serviceType, session: mcSession)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,43 @@ class ViewController: UIViewController {
     }
     
     func sendData(direction: String){
-        
+        if self.mcSession.connectedPeers.count > 0 {
+            let data = direction.data(using: .utf8)!
+            do {
+                try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
+            }catch let error as NSError {
+                let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                present(ac, animated: true)
+            }
+        }
     }
     
     func conect(){
-        
+        mcBrowser.delegate = self
+        present(mcBrowser, animated: true)
     }
+    @IBAction func connectPressed(_ sender: Any) {
+        self.conect()
+    }
+    
+    @IBAction func leftSwipe(_ sender: Any) {
+        self.sendData(direction: "←")
+    }
+    
+    @IBAction func rightSwipe(_ sender: Any) {
+        self.sendData(direction: "→")
+    }
+    
+    @IBAction func upSwipe(_ sender: Any) {
+        self.sendData(direction: "↑")
+    }
+    
+    @IBAction func downSwipe(_ sender: Any) {
+        self.sendData(direction: "↓")
+    }
+    
+    
 }
 
 extension ViewController: MCSessionDelegate, MCBrowserViewControllerDelegate{
@@ -34,6 +65,7 @@ extension ViewController: MCSessionDelegate, MCBrowserViewControllerDelegate{
         switch state {
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
+            self.sendData(direction: "pegou pegou")
             
         case MCSessionState.connecting:
             print("Connecting: \(peerID.displayName)")
