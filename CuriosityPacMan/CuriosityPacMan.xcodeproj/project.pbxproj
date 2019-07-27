@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1505938322ECDEE0008CA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505938222ECDEE0008CA14F /* AppDelegate.swift */; };
+		1505938522ECDEE0008CA14F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505938422ECDEE0008CA14F /* ViewController.swift */; };
+		1505938822ECDEE0008CA14F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1505938622ECDEE0008CA14F /* Main.storyboard */; };
+		1505938A22ECDEE2008CA14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1505938922ECDEE2008CA14F /* Assets.xcassets */; };
+		1505938D22ECDEE2008CA14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1505938B22ECDEE2008CA14F /* LaunchScreen.storyboard */; };
 		A1FDD70222ECDCEE00AF453E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70122ECDCEE00AF453E /* AppDelegate.swift */; };
 		A1FDD70422ECDCEE00AF453E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70322ECDCEE00AF453E /* ViewController.swift */; };
 		A1FDD70722ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70522ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld */; };
@@ -15,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1505938022ECDEE0008CA14F /* CuriosityPacMan_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosityPacMan_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1505938222ECDEE0008CA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1505938422ECDEE0008CA14F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1505938722ECDEE0008CA14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1505938922ECDEE2008CA14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1505938C22ECDEE2008CA14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1505938E22ECDEE2008CA14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1FDD6FE22ECDCEE00AF453E /* CuriosityPacMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosityPacMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FDD70122ECDCEE00AF453E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FDD70322ECDCEE00AF453E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +37,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1505937D22ECDEE0008CA14F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1FDD6FB22ECDCEE00AF453E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -35,10 +54,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1505938122ECDEE0008CA14F /* CuriosityPacMan_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1505938222ECDEE0008CA14F /* AppDelegate.swift */,
+				1505938422ECDEE0008CA14F /* ViewController.swift */,
+				1505938622ECDEE0008CA14F /* Main.storyboard */,
+				1505938922ECDEE2008CA14F /* Assets.xcassets */,
+				1505938B22ECDEE2008CA14F /* LaunchScreen.storyboard */,
+				1505938E22ECDEE2008CA14F /* Info.plist */,
+			);
+			path = CuriosityPacMan_iOS;
+			sourceTree = "<group>";
+		};
 		A1FDD6F522ECDCEE00AF453E = {
 			isa = PBXGroup;
 			children = (
 				A1FDD70022ECDCEE00AF453E /* CuriosityPacMan */,
+				1505938122ECDEE0008CA14F /* CuriosityPacMan_iOS */,
 				A1FDD6FF22ECDCEE00AF453E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				A1FDD6FE22ECDCEE00AF453E /* CuriosityPacMan.app */,
+				1505938022ECDEE0008CA14F /* CuriosityPacMan_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +101,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1505937F22ECDEE0008CA14F /* CuriosityPacMan_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1505939122ECDEE2008CA14F /* Build configuration list for PBXNativeTarget "CuriosityPacMan_iOS" */;
+			buildPhases = (
+				1505937C22ECDEE0008CA14F /* Sources */,
+				1505937D22ECDEE0008CA14F /* Frameworks */,
+				1505937E22ECDEE0008CA14F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CuriosityPacMan_iOS;
+			productName = CuriosityPacMan_iOS;
+			productReference = 1505938022ECDEE0008CA14F /* CuriosityPacMan_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A1FDD6FD22ECDCEE00AF453E /* CuriosityPacMan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1FDD71022ECDCF000AF453E /* Build configuration list for PBXNativeTarget "CuriosityPacMan" */;
@@ -94,6 +145,9 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Lucas Cardoso";
 				TargetAttributes = {
+					1505937F22ECDEE0008CA14F = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					A1FDD6FD22ECDCEE00AF453E = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -113,11 +167,22 @@
 			projectRoot = "";
 			targets = (
 				A1FDD6FD22ECDCEE00AF453E /* CuriosityPacMan */,
+				1505937F22ECDEE0008CA14F /* CuriosityPacMan_iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1505937E22ECDEE0008CA14F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1505938D22ECDEE2008CA14F /* LaunchScreen.storyboard in Resources */,
+				1505938A22ECDEE2008CA14F /* Assets.xcassets in Resources */,
+				1505938822ECDEE0008CA14F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1FDD6FC22ECDCEE00AF453E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +195,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1505937C22ECDEE0008CA14F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1505938522ECDEE0008CA14F /* ViewController.swift in Sources */,
+				1505938322ECDEE0008CA14F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1FDD6FA22ECDCEE00AF453E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,6 +217,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1505938622ECDEE0008CA14F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1505938722ECDEE0008CA14F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1505938B22ECDEE2008CA14F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1505938C22ECDEE2008CA14F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		A1FDD70822ECDCEE00AF453E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -154,6 +244,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1505938F22ECDEE2008CA14F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CuriosityPacMan_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "home.CuriosityPacMan-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1505939022ECDEE2008CA14F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CuriosityPacMan_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "home.CuriosityPacMan-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A1FDD70E22ECDCF000AF453E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -309,6 +441,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1505939122ECDEE2008CA14F /* Build configuration list for PBXNativeTarget "CuriosityPacMan_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1505938F22ECDEE2008CA14F /* Debug */,
+				1505939022ECDEE2008CA14F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A1FDD6F922ECDCEE00AF453E /* Build configuration list for PBXProject "CuriosityPacMan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
