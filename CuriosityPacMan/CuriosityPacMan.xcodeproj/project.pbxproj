@@ -14,6 +14,9 @@
 		1505938D22ECDEE2008CA14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1505938B22ECDEE2008CA14F /* LaunchScreen.storyboard */; };
 		15B2A30522ECE5CA00667C70 /* DataBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B2A30422ECE5CA00667C70 /* DataBetween.swift */; };
 		15B2A30622ECE5CA00667C70 /* DataBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B2A30422ECE5CA00667C70 /* DataBetween.swift */; };
+		15B2A34D22ED0A8C00667C70 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 15B2A34C22ED0A8C00667C70 /* GameScene.sks */; };
+		15B2A34F22ED0AA000667C70 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B2A34E22ED0AA000667C70 /* GameScene.swift */; };
+		15B2A35722ED12D200667C70 /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 15B2A35522ED12D200667C70 /* MyTileSet.sks */; };
 		A1FDD70222ECDCEE00AF453E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70122ECDCEE00AF453E /* AppDelegate.swift */; };
 		A1FDD70422ECDCEE00AF453E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70322ECDCEE00AF453E /* ViewController.swift */; };
 		A1FDD70722ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70522ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld */; };
@@ -30,6 +33,9 @@
 		1505938C22ECDEE2008CA14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1505938E22ECDEE2008CA14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15B2A30422ECE5CA00667C70 /* DataBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBetween.swift; sourceTree = "<group>"; };
+		15B2A34C22ED0A8C00667C70 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		15B2A34E22ED0AA000667C70 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		15B2A35522ED12D200667C70 /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
 		A1FDD6FE22ECDCEE00AF453E /* CuriosityPacMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosityPacMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FDD70122ECDCEE00AF453E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FDD70322ECDCEE00AF453E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,16 @@
 			path = CuriosityPacMan_iOS;
 			sourceTree = "<group>";
 		};
+		15B2A34722ED0A0000667C70 /* SpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+				15B2A34C22ED0A8C00667C70 /* GameScene.sks */,
+				15B2A34E22ED0AA000667C70 /* GameScene.swift */,
+				15B2A35522ED12D200667C70 /* MyTileSet.sks */,
+			);
+			path = SpriteKit;
+			sourceTree = "<group>";
+		};
 		A1FDD6F522ECDCEE00AF453E = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +108,7 @@
 		A1FDD70022ECDCEE00AF453E /* CuriosityPacMan */ = {
 			isa = PBXGroup;
 			children = (
+				15B2A34722ED0A0000667C70 /* SpriteKit */,
 				A1FDD70122ECDCEE00AF453E /* AppDelegate.swift */,
 				A1FDD70322ECDCEE00AF453E /* ViewController.swift */,
 				A1FDD70822ECDCEE00AF453E /* Main.storyboard */,
@@ -191,7 +208,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B2A35722ED12D200667C70 /* MyTileSet.sks in Resources */,
 				A1FDD70C22ECDCF000AF453E /* Assets.xcassets in Resources */,
+				15B2A34D22ED0A8C00667C70 /* GameScene.sks in Resources */,
 				A1FDD70A22ECDCEE00AF453E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B2A34F22ED0AA000667C70 /* GameScene.swift in Sources */,
 				15B2A30522ECE5CA00667C70 /* DataBetween.swift in Sources */,
 				A1FDD70422ECDCEE00AF453E /* ViewController.swift in Sources */,
 				A1FDD70722ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld in Sources */,

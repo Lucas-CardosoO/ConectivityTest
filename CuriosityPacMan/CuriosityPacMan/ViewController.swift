@@ -7,23 +7,41 @@
 //
 
 import UIKit
+import SpriteKit
 import MultipeerConnectivity
 
 class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
-    @IBOutlet weak var testLabel: UILabel!
     var peerID: MCPeerID!
     var mcSession: MCSession!
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
+    
+    @IBOutlet weak var mySKView: SKView!
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // CONEXAO COM IPHONE
         peerID = MCPeerID(displayName: UIDevice.current.name)
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         mcSession.delegate = self
         
-        
         self.startHosting()
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // MOSTRAR TELA INICIAL
+        // Load the SKScene from 'GameScene.sks'
+        if let scene = SKScene(fileNamed: "GameScene") {
+            // Set the scale mode to scale to fit the window
+            scene.scaleMode = .aspectFill
+            
+            // Present the scene
+            mySKView.presentScene(scene)
+        }
+        
+        mySKView.ignoresSiblingOrder = true
+        
+        mySKView.showsFPS = true
+        mySKView.showsNodeCount = true
     }
 
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -45,7 +63,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if let command = String(data: data, encoding: .utf8){
             DispatchQueue.main.async { [unowned self] in
-                self.testLabel.text = command
+                print(command)
             }
         }
     }

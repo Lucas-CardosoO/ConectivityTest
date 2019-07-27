@@ -22,18 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wjdhfksdjbfks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-v4-mXw">
-                                <rect key="frame" x="121" y="426" width="1679" height="228"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="107"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-6O-pjo">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </skView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mAf-6O-pjo" secondAttribute="trailing" id="5cw-Sd-Yuy"/>
+                            <constraint firstItem="mAf-6O-pjo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6KF-X4-by3"/>
+                            <constraint firstItem="mAf-6O-pjo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S0v-Na-zcH"/>
+                            <constraint firstAttribute="bottom" secondItem="mAf-6O-pjo" secondAttribute="bottom" id="qgn-27-9jq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="Sho-v4-mXw" id="uAR-Mq-WtA"/>
+                        <outlet property="mySKView" destination="mAf-6O-pjo" id="aOq-ok-647"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
