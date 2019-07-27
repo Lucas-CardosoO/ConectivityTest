@@ -13,10 +13,19 @@ class ViewController: UIViewController {
     
     lazy var peerID = MCPeerID(displayName: UIDevice.current.name)
     lazy var mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .optional)
+//    lazy var mcBrowser = 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.mcSession.delegate = self
+    }
+    
+    func sendData(direction: String){
+        
+    }
+    
+    func conect(){
+        
     }
 }
 
@@ -31,6 +40,9 @@ extension ViewController: MCSessionDelegate, MCBrowserViewControllerDelegate{
             
         case MCSessionState.notConnected:
             print("Not Connected: \(peerID.displayName)")
+            
+        default:
+            break
         }
     }
     
