@@ -16,11 +16,12 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
     override func viewDidLoad() {
-        self.startHosting(action: UIAlertAction?)
         peerID = MCPeerID(displayName: UIDevice.current.name)
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession.delegate = self
         
+        
+        self.startHosting()
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -69,8 +70,8 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         
     }
     
-    func startHosting(action: UIAlertAction!) {
-        mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "hws-kb", discoveryInfo: nil, session: mcSession)
+    func startHosting() {
+        mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: mcSession)
         mcAdvertiserAssistant.start()
     }
 }
