@@ -17,7 +17,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     
     override func viewDidLoad() {
         peerID = MCPeerID(displayName: UIDevice.current.name)
-        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
+        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         mcSession.delegate = self
         
         
