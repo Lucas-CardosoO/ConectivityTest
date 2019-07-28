@@ -9,3 +9,11 @@
 import Foundation
 
 let serviceType = "hws-kb"
+
+
+enum Direction{
+    case left
+    case right
+    case up
+    case down
+}

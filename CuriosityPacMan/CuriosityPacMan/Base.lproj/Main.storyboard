@@ -24,6 +24,7 @@
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-6O-pjo">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <gestureRecognizers/>
                             </skView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

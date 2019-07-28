@@ -17,6 +17,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     
     
     @IBOutlet weak var mySKView: SKView!
+    lazy var scene = GameScene(fileNamed: "GameScene")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,21 +30,53 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         self.startHosting()
         
         // MOSTRAR TELA INICIAL
-        // Load the SKScene from 'GameScene.sks'
-        if let scene = SKScene(fileNamed: "GameScene") {
-            // Set the scale mode to scale to fit the window
-            scene.scaleMode = .aspectFill
-            
-            // Present the scene
-            mySKView.presentScene(scene)
-        }
         
-        mySKView.ignoresSiblingOrder = true
+        self.scene.scaleMode = .aspectFill
+        self.mySKView.presentScene(self.scene)
         
-        mySKView.showsFPS = true
-        mySKView.showsNodeCount = true
-    }
+        self.mySKView.ignoresSiblingOrder = true
+        self.mySKView.showsFPS = true
+        self.mySKView.showsNodeCount = true
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture(gesture:)))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture(gesture:)))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture(gesture:)))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture(gesture:)))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
 
+    }
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == UISwipeGestureRecognizer.Direction.right {
+            print("Swipe Right")
+            self.scene.moveToNextTile(next: .right)
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
+            print("Swipe Left")
+            self.scene.moveToNextTile(next: .left)
+            
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
+            print("Swipe Up")
+            self.scene.moveToNextTile(next: .up)
+            
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
+            print("Swipe Down")
+            self.scene.moveToNextTile(next: .down)
+        }
+    }
+    
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
         case MCSessionState.connected:
