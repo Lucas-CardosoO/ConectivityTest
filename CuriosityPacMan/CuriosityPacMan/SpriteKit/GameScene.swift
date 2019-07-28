@@ -33,6 +33,7 @@ class GameScene: SKScene {
     
     var catSound = SKAction.playSoundFileNamed("cat.mp3", waitForCompletion: false)
     var peiSound = SKAction.playSoundFileNamed("pei.mp3", waitForCompletion: false)
+    var bgSound = SKAction.playSoundFileNamed("medievalPacMan.mp3", waitForCompletion: true)
 
     override func didMove(to view: SKView) {
         print("print")
@@ -42,6 +43,7 @@ class GameScene: SKScene {
         self.moveBot(bot1, dirMoveBot)
         self.moveBot(bot2, dirMoveBot)
         self.collisionHandler()
+        self.run(bgSound)
         
     }
     
@@ -200,9 +202,9 @@ class GameScene: SKScene {
     
     func getNextDirection() -> Direction {
         var randomNum = Int.random(in: 1...4)
-        while (Direction(rawValue: randomNum) == self.dirMoveBot) {
-            randomNum = Int.random(in: 1...4)
-        }
+//        while (Direction(rawValue: randomNum) == self.dirMoveBot) {
+//            randomNum = Int.random(in: 1...4)
+//        }
         
         return Direction(rawValue: randomNum) ?? .none
     }

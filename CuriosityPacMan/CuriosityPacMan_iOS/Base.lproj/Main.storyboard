@@ -121,7 +121,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="df4-MT-MY4" secondAttribute="bottom" id="Il9-4z-CFY"/>
                             <constraint firstItem="df4-MT-MY4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SIS-6x-eru"/>
                             <constraint firstItem="df4-MT-MY4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="eAn-IF-CbI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="df4-MT-MY4" secondAttribute="top" constant="20" id="rFL-rQ-aOK"/>
+                            <constraint firstAttribute="top" secondItem="df4-MT-MY4" secondAttribute="top" id="rFL-rQ-aOK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
