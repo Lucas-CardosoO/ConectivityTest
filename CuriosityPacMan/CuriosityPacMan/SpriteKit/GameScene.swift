@@ -14,17 +14,21 @@ class GameScene: SKScene {
     
     private lazy var p1 = childNode(withName: "p1") as! SKSpriteNode
     private lazy var p2 = childNode(withName: "p2") as! SKSpriteNode
+    private lazy var bot = childNode(withName: "bot") as! SKSpriteNode
     
     private lazy var map: SKTileMapNode = childNode(withName: "TileMap") as! SKTileMapNode
     
     private var dirMoveP1: Direction = .none
+    private var currDirP1: Direction = .none
     private var dirMoveP2: Direction = .none
+    private var currDirP2: Direction = .none
     private var dirMoveBot: Direction = .none
     
     override func didMove(to view: SKView) {
         print("print")
-        self.moveToNextTileP1(next: dirMoveP1)
-        self.moveToNextTileP2(next: dirMoveP2)
+        self.moveToNextTileP1()
+        self.moveToNextTileP2()
+        self.moveBot()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -40,59 +44,92 @@ class GameScene: SKScene {
         return tile?.name != "wall"
     }
     
-    func moveToNextTileP1(next: Direction){
-        var movePos = p1.position
+    fileprivate func getNextPos(_ next: Direction, _ movePos: CGPoint) -> CGPoint{
+        var moveTo = movePos
         
         switch next {
         case .down:
-            movePos.y -= 64
+            moveTo.y -= 64
         case .left:
-            movePos.x -= 64
+            moveTo.x -= 64
         case .right:
-            movePos.x += 64
+            moveTo.x += 64
         case .up:
-            movePos.y += 64
+            moveTo.y += 64
         case .none:
             break
         }
         
-        if tileCheck(movePos) {
-            self.p1.run(SKAction.move(to: movePos, duration: playerMovementTime)) {
-                self.moveToNextTileP1(next: self.dirMoveP1)
+        return moveTo
+    }
+    
+    func moveToNextTileP1(){
+        let nextChangeDir = self.getNextPos(self.dirMoveP1, self.p1.position)
+        let nextCurrDir = self.getNextPos(self.currDirP1, self.p1.position)
+        
+        if self.tileCheck(nextChangeDir) {
+            self.currDirP1 = self.dirMoveP1
+            self.p1.run(SKAction.move(to: nextChangeDir, duration: playerMovementTime)) {
+                self.moveToNextTileP1()
+            }
+        } else if self.tileCheck(nextCurrDir){
+            self.p1.run(SKAction.move(to: nextCurrDir, duration: playerMovementTime)){
+                self.moveToNextTileP1()
             }
         } else {
             self.p1.run(SKAction.wait(forDuration: playerMovementTime)) {
-                self.moveToNextTileP1(next: self.dirMoveP1)
+                self.moveToNextTileP1()
             }
         }
     }
     
     
-    func moveToNextTileP2(next: Direction){
-        var movePos = p2.position
+    func moveToNextTileP2(){
+        let nextChangeDir = self.getNextPos(self.dirMoveP2, self.p2.position)
+        let nextCurrDir = self.getNextPos(self.currDirP2, self.p2.position)
         
-        switch next {
-        case .down:
-            movePos.y -= 64
-        case .left:
-            movePos.x -= 64
-        case .right:
-            movePos.x += 64
-        case .up:
-            movePos.y += 64
-        case .none:
-            break
-        }
-        
-        if tileCheck(movePos) {
-            self.p2.run(SKAction.move(to: movePos, duration: playerMovementTime)) {
-                self.moveToNextTileP2(next: self.dirMoveP2)
+        if self.tileCheck(nextChangeDir) {
+            self.currDirP2 = self.dirMoveP2
+            self.p2.run(SKAction.move(to: nextChangeDir, duration: playerMovementTime)) {
+                self.moveToNextTileP2()
+            }
+        } else if self.tileCheck(nextCurrDir){
+            self.p2.run(SKAction.move(to: nextCurrDir, duration: playerMovementTime)){
+                self.moveToNextTileP2()
             }
         } else {
             self.p2.run(SKAction.wait(forDuration: playerMovementTime)) {
-                self.moveToNextTileP2(next: self.dirMoveP2)
+                self.moveToNextTileP2()
             }
         }
+    }
+    
+    func moveBot() {
+        let nextMove = self.randomMoveBot()
+        
+        let nextChangeDir = self.getNextPos(nextMove, self.bot.position)
+        let nextCurrDir = self.getNextPos(self.dirMoveBot, self.bot.position)
+        
+        if self.tileCheck(nextChangeDir) {
+            self.dirMoveBot = nextMove
+            self.bot.run(SKAction.move(to: nextChangeDir, duration: botMovementTime)) {
+                self.moveBot()
+            }
+        } else if self.tileCheck(nextCurrDir){
+            self.bot.run(SKAction.move(to: nextCurrDir, duration: botMovementTime)){
+                self.moveBot()
+            }
+        } else {
+            self.bot.run(SKAction.wait(forDuration: botMovementTime)) {
+                self.moveBot()
+            }
+        }
+    }
+    
+    func randomMoveBot() -> Direction {
+        let randomNum = Int.random(in: 1...4)
+        
+        return Direction(rawValue: randomNum) ?? .none
     }
     
     func setP1Direction(direction: Direction) {
