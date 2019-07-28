@@ -17,6 +17,10 @@ class GameScene: SKScene {
     
     private lazy var map: SKTileMapNode = childNode(withName: "TileMap") as! SKTileMapNode
     
+    private var dirMoveP1: Direction
+    private var dirMoveP2 = ""
+    private var dirMoveBot = ""
+    
     override func didMove(to view: SKView) {
         print("print")
     }
@@ -35,41 +39,41 @@ class GameScene: SKScene {
     }
     
     func moveToNextTileP1(next: Direction){
-        var movie = p1.position
+        var movePos = p1.position
         
         switch next {
         case .down:
-            movie.y -= 64
+            movePos.y -= 64
         case .left:
-            movie.x -= 64
+            movePos.x -= 64
         case .right:
-            movie.x += 64
+            movePos.x += 64
         case .up:
-            movie.y += 64
+            movePos.y += 64
         }
         
-        if tileCheck(movie) {
-            self.p1.run(SKAction.move(to: movie, duration: 0.3))
+        if tileCheck(movePos) {
+            self.p1.run(SKAction.move(to: movePos, duration: 0.3))
         }
     }
     
     
     func moveToNextTileP2(next: Direction){
-        var movie = p2.position
+        var movePos = p2.position
         
         switch next {
         case .down:
-            movie.y -= 64
+            movePos.y -= 64
         case .left:
-            movie.x -= 64
+            movePos.x -= 64
         case .right:
-            movie.x += 64
+            movePos.x += 64
         case .up:
-            movie.y += 64
+            movePos.y += 64
         }
         
-        if tileCheck(movie) {
-            self.p2.run(SKAction.move(to: movie, duration: 0.3))
+        if tileCheck(movePos) {
+            self.p2.run(SKAction.move(to: movePos, duration: 0.3))
         }
     }
     
