@@ -11,10 +11,19 @@ import MultipeerConnectivity
 
 class ViewController: UIViewController {
     
+    // COMUNICACAO
     lazy var peerID = MCPeerID(displayName: UIDevice.current.name)
     lazy var mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
     lazy var mcBrowser = MCBrowserViewController(serviceType: serviceType, session: mcSession)
-
+    
+    // UI
+    @IBOutlet weak var labelSwipe: UILabel!
+    @IBOutlet weak var upImage: UIImageView!
+    @IBOutlet weak var downImage: UIImageView!
+    @IBOutlet weak var leftImage: UIImageView!
+    @IBOutlet weak var rightImage: UIImageView!
+    @IBOutlet weak var buttonConnect: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mcSession.delegate = self
@@ -33,12 +42,22 @@ class ViewController: UIViewController {
         }
     }
     
-    func conect(){
+    func connect(){
         mcBrowser.delegate = self
         present(mcBrowser, animated: true)
     }
+    
+    func showArrows(){
+        self.buttonConnect.isHidden = true
+        self.labelSwipe.isHidden = false
+        self.upImage.isHidden = false
+        self.downImage.isHidden = false
+        self.leftImage.isHidden = false
+        self.rightImage.isHidden = false
+    }
+    
     @IBAction func connectPressed(_ sender: Any) {
-        self.conect()
+        self.connect()
     }
     
     @IBAction func leftSwipe(_ sender: Any) {
@@ -56,9 +75,9 @@ class ViewController: UIViewController {
     @IBAction func downSwipe(_ sender: Any) {
         self.sendData(direction: "↓")
     }
-    
-    
 }
+
+
 
 extension ViewController: MCSessionDelegate, MCBrowserViewControllerDelegate{
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -66,6 +85,10 @@ extension ViewController: MCSessionDelegate, MCBrowserViewControllerDelegate{
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
             self.sendData(direction: "pegou pegou")
+            
+            DispatchQueue.main.async {
+                self.showArrows()
+            }
             
         case MCSessionState.connecting:
             print("Connecting: \(peerID.displayName)")

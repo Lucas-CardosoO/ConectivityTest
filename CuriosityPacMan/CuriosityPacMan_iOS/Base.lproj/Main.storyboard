@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,20 +15,54 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CuriosityPacMan_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0o-SC-TNh">
-                                <rect key="frame" x="183" y="324" width="48" height="30"/>
-                                <state key="normal" title="conect"/>
-                                <connections>
-                                    <action selector="connectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="csf-fK-djA"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="df4-MT-MY4">
-                                <rect key="frame" x="0.0" y="414" width="414" height="448"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0o-SC-TNh">
+                                        <rect key="frame" x="177.66666666666666" y="353" width="59" height="30"/>
+                                        <state key="normal" title="Connect"/>
+                                        <connections>
+                                            <action selector="connectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="csf-fK-djA"/>
+                                        </connections>
+                                    </button>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-right" translatesAutoresizingMaskIntoConstraints="NO" id="fGz-1x-MC8">
+                                        <rect key="frame" x="306" y="318" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="G8V-VB-vto">
+                                        <rect key="frame" x="157" y="628" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-up" translatesAutoresizingMaskIntoConstraints="NO" id="9XR-5H-qkv">
+                                        <rect key="frame" x="157" y="28" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-left" translatesAutoresizingMaskIntoConstraints="NO" id="k1D-Om-vYI">
+                                        <rect key="frame" x="8" y="318" width="100" height="100"/>
+                                    </imageView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to  play!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEQ-Ks-abm">
+                                        <rect key="frame" x="150.33333333333334" y="333.33333333333331" width="113.66666666666666" height="69.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="fGz-1x-MC8" firstAttribute="trailing" secondItem="df4-MT-MY4" secondAttribute="trailingMargin" id="3X2-5w-JuX"/>
+                                    <constraint firstItem="G8V-VB-vto" firstAttribute="bottom" secondItem="df4-MT-MY4" secondAttribute="bottomMargin" id="D8T-PS-CkZ"/>
+                                    <constraint firstItem="k1D-Om-vYI" firstAttribute="leading" secondItem="df4-MT-MY4" secondAttribute="leadingMargin" id="IYo-yg-Bfs"/>
+                                    <constraint firstItem="9XR-5H-qkv" firstAttribute="centerX" secondItem="df4-MT-MY4" secondAttribute="centerX" id="QvM-4y-6n5"/>
+                                    <constraint firstItem="fGz-1x-MC8" firstAttribute="centerY" secondItem="df4-MT-MY4" secondAttribute="centerY" id="bJe-Pc-0PQ"/>
+                                    <constraint firstItem="9XR-5H-qkv" firstAttribute="top" secondItem="df4-MT-MY4" secondAttribute="topMargin" id="dLW-gy-igw"/>
+                                    <constraint firstItem="rEQ-Ks-abm" firstAttribute="centerX" secondItem="df4-MT-MY4" secondAttribute="centerX" id="e1z-rG-D8n"/>
+                                    <constraint firstItem="w0o-SC-TNh" firstAttribute="centerY" secondItem="df4-MT-MY4" secondAttribute="centerY" id="irj-Wo-Ebt"/>
+                                    <constraint firstItem="k1D-Om-vYI" firstAttribute="centerY" secondItem="df4-MT-MY4" secondAttribute="centerY" id="lKr-Dp-z0c"/>
+                                    <constraint firstItem="G8V-VB-vto" firstAttribute="centerX" secondItem="df4-MT-MY4" secondAttribute="centerX" id="nVj-b4-IsB"/>
+                                    <constraint firstItem="w0o-SC-TNh" firstAttribute="centerX" secondItem="df4-MT-MY4" secondAttribute="centerX" id="oG8-32-rdq"/>
+                                    <constraint firstItem="rEQ-Ks-abm" firstAttribute="centerY" secondItem="df4-MT-MY4" secondAttribute="centerY" id="xCE-0A-lQJ"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Phu-jb-pqr" appends="YES" id="szS-dN-w5o"/>
                                     <outletCollection property="gestureRecognizers" destination="IJQ-v2-fyy" appends="YES" id="M48-3B-Qaa"/>
@@ -40,15 +74,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="df4-MT-MY4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="2bp-JN-sgy"/>
-                            <constraint firstItem="df4-MT-MY4" firstAttribute="top" secondItem="w0o-SC-TNh" secondAttribute="bottom" constant="60" id="KY5-E9-P0h"/>
-                            <constraint firstItem="w0o-SC-TNh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UfB-Yn-Mgb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="df4-MT-MY4" secondAttribute="trailing" id="V9w-dY-upg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="df4-MT-MY4" secondAttribute="bottom" id="eqD-I5-QI1"/>
-                            <constraint firstItem="df4-MT-MY4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gY1-VC-Ofk"/>
+                            <constraint firstItem="df4-MT-MY4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6x9-lE-TYV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="df4-MT-MY4" secondAttribute="trailing" id="IiF-vi-eBR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="df4-MT-MY4" secondAttribute="bottom" id="Il9-4z-CFY"/>
+                            <constraint firstItem="df4-MT-MY4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SIS-6x-eru"/>
+                            <constraint firstItem="df4-MT-MY4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="eAn-IF-CbI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="df4-MT-MY4" secondAttribute="top" constant="20" id="rFL-rQ-aOK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonConnect" destination="w0o-SC-TNh" id="EVa-dG-M2z"/>
+                        <outlet property="downImage" destination="G8V-VB-vto" id="tUq-Kz-0o3"/>
+                        <outlet property="labelSwipe" destination="rEQ-Ks-abm" id="jKF-kD-xFQ"/>
+                        <outlet property="leftImage" destination="k1D-Om-vYI" id="Vrz-nQ-jh0"/>
+                        <outlet property="rightImage" destination="fGz-1x-MC8" id="4pm-4O-hRY"/>
+                        <outlet property="upImage" destination="9XR-5H-qkv" id="puh-OC-Mez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="Phu-jb-pqr">
@@ -72,6 +114,13 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="134.5108695652174"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow-down" width="100" height="100"/>
+        <image name="arrow-left" width="100" height="100"/>
+        <image name="arrow-right" width="100" height="100"/>
+        <image name="arrow-up" width="100" height="100"/>
+    </resources>
 </document>
