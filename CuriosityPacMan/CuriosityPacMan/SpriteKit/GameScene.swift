@@ -15,6 +15,8 @@ class GameScene: SKScene {
     private lazy var p1 = childNode(withName: "p1") as! SKSpriteNode
     private lazy var p2 = childNode(withName: "p2") as! SKSpriteNode
     private lazy var bot = childNode(withName: "bot") as! SKSpriteNode
+//    private lazy var bot1 = childNode(withName: "bot1") as! SKSpriteNode
+//    private lazy var bot2 = childNode(withName: "bot2") as! SKSpriteNode
     private lazy var cat = childNode(withName: "cat") as! SKSpriteNode
     
     private lazy var map: SKTileMapNode = childNode(withName: "TileMap") as! SKTileMapNode
@@ -131,7 +133,7 @@ class GameScene: SKScene {
     }
     
     func moveBot() {
-        let nextMove = self.randomMoveBot()
+        let nextMove = self.getNextDirection()
         
         let nextChangeDir = self.getNextPos(nextMove, self.bot.position)
         let nextCurrDir = self.getNextPos(self.dirMoveBot, self.bot.position)
@@ -152,8 +154,11 @@ class GameScene: SKScene {
         }
     }
     
-    func randomMoveBot() -> Direction {
-        let randomNum = Int.random(in: 1...4)
+    func getNextDirection() -> Direction {
+        var randomNum = Int.random(in: 1...4)
+        while (Direction(rawValue: randomNum) == self.dirMoveBot) {
+            randomNum = Int.random(in: 1...4)
+        }
         
         return Direction(rawValue: randomNum) ?? .none
     }
