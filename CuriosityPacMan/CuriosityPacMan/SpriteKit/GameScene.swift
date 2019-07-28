@@ -19,6 +19,8 @@ class GameScene: SKScene {
     
     private lazy var map: SKTileMapNode = childNode(withName: "TileMap") as! SKTileMapNode
     
+    var endGameFunction: ((String)->(Void))!
+    
     private var dirMoveP1: Direction = .none
     private var currDirP1: Direction = .none
     private var dirMoveP2: Direction = .none
@@ -35,14 +37,17 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         if (checkCollision(cat.position, bot.position)) {
             cat.removeFromParent()
+            self.endGameFunction("a Inquisição Espanhola")
         }
         
         if (checkCollision(p1.position, bot.position)) {
             bot.removeFromParent()
+            self.endGameFunction("Player 1")
         }
         
         if (checkCollision(p2.position, bot.position)) {
             bot.removeFromParent()
+            self.endGameFunction("Player 2")
         }
     }
     
@@ -50,12 +55,8 @@ class GameScene: SKScene {
         let columnA = map.tileColumnIndex(fromPosition: a)
         let rowA = map.tileRowIndex(fromPosition: a)
         
-        let tileA = map.tileDefinition(atColumn: columnA, row: rowA)
-        
         let columnB = map.tileColumnIndex(fromPosition: b)
         let rowB = map.tileRowIndex(fromPosition: b)
-        
-        let tileB = map.tileDefinition(atColumn: columnB, row: rowB)
         
         return (columnA == columnB) && (rowA == rowB)
     }
