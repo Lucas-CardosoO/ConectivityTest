@@ -59,21 +59,21 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
             print("Swipe Right")
-            self.scene.moveToNextTile(next: .right)
+            self.scene.moveToNextTileP1(next: .right)
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
             print("Swipe Left")
-            self.scene.moveToNextTile(next: .left)
+            self.scene.moveToNextTileP1(next: .left)
             
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
             print("Swipe Up")
-            self.scene.moveToNextTile(next: .up)
+            self.scene.moveToNextTileP1(next: .up)
             
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
             print("Swipe Down")
-            self.scene.moveToNextTile(next: .down)
+            self.scene.moveToNextTileP1(next: .down)
         }
     }
     
@@ -96,6 +96,9 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if let command = String(data: data, encoding: .utf8){
             DispatchQueue.main.async { [unowned self] in
+                if let side = Direction.fromString(side: command){
+                    self.scene.moveToNextTileP2(next: side)
+                }
                 print(command)
             }
         }

@@ -13,6 +13,7 @@ import GameplayKit
 class GameScene: SKScene {
     
     private lazy var p1 = childNode(withName: "p1") as! SKSpriteNode
+    private lazy var p2 = childNode(withName: "p2") as! SKSpriteNode
     
     private lazy var map: SKTileMapNode = childNode(withName: "TileMap") as! SKTileMapNode
     
@@ -33,7 +34,7 @@ class GameScene: SKScene {
         return tile?.name != "wall"
     }
     
-    func moveToNextTile(next: Direction){
+    func moveToNextTileP1(next: Direction){
         var movie = p1.position
         
         switch next {
@@ -52,6 +53,25 @@ class GameScene: SKScene {
         }
     }
     
+    
+    func moveToNextTileP2(next: Direction){
+        var movie = p2.position
+        
+        switch next {
+        case .down:
+            movie.y -= 64
+        case .left:
+            movie.x -= 64
+        case .right:
+            movie.x += 64
+        case .up:
+            movie.y += 64
+        }
+        
+        if tileCheck(movie) {
+            self.p2.run(SKAction.move(to: movie, duration: 0.3))
+        }
+    }
     
     
 }

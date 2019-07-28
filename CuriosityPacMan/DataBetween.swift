@@ -16,4 +16,21 @@ enum Direction{
     case right
     case up
     case down
+    
+    static func fromString(side: String) -> Direction?{
+        switch side {
+        case "←":
+            return Direction.left
+        case "→":
+            return Direction.right
+        case "↑":
+            return Direction.up
+        case "↓":
+            return Direction.down
+        default:
+            return nil
+        }
+        
+        return nil
+    }
 }
