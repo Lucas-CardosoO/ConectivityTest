@@ -10,7 +10,7 @@ import Foundation
 
 let serviceType = "hws-kb"
 let playerMovementTime = 0.2
-let botMovementTime = 0.1
+let botMovementTime = 0.15
 
 enum Direction: Int{
     case none = 0

@@ -24,6 +24,8 @@
 		A1FDD70722ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70522ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld */; };
 		A1FDD70A22ECDCEE00AF453E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FDD70822ECDCEE00AF453E /* Main.storyboard */; };
 		A1FDD70C22ECDCF000AF453E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FDD70B22ECDCF000AF453E /* Assets.xcassets */; };
+		D477086922EE20CB00D3D872 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D477086822EE20CB00D3D872 /* cat.mp3 */; };
+		D477086B22EE248300D3D872 /* pei.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D477086A22EE248300D3D872 /* pei.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		A1FDD70922ECDCEE00AF453E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1FDD70B22ECDCF000AF453E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1FDD70D22ECDCF000AF453E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D477086822EE20CB00D3D872 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = cat.mp3; path = ../../../../../Downloads/cat.mp3; sourceTree = "<group>"; };
+		D477086A22EE248300D3D872 /* pei.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pei.mp3; path = ../../../../../Downloads/pei.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				15B2A30422ECE5CA00667C70 /* DataBetween.swift */,
 				A1FDD70022ECDCEE00AF453E /* CuriosityPacMan */,
 				1505938122ECDEE0008CA14F /* CuriosityPacMan_iOS */,
+				D477086722EE20AD00D3D872 /* Sounds */,
 				A1FDD6FF22ECDCEE00AF453E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +136,15 @@
 				A1FDD70522ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld */,
 			);
 			path = CuriosityPacMan;
+			sourceTree = "<group>";
+		};
+		D477086722EE20AD00D3D872 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D477086A22EE248300D3D872 /* pei.mp3 */,
+				D477086822EE20CB00D3D872 /* cat.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D477086922EE20CB00D3D872 /* cat.mp3 in Resources */,
 				15B2A35722ED12D200667C70 /* MyTileSet.sks in Resources */,
 				A1FDD70C22ECDCF000AF453E /* Assets.xcassets in Resources */,
+				D477086B22EE248300D3D872 /* pei.mp3 in Resources */,
 				15B2A34D22ED0A8C00667C70 /* GameScene.sks in Resources */,
 				A1FDD70A22ECDCEE00AF453E /* Main.storyboard in Resources */,
 			);
@@ -448,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JM6RH6V5Z9;
+				DEVELOPMENT_TEAM = A975LQD622;
 				INFOPLIST_FILE = CuriosityPacMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -469,7 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JM6RH6V5Z9;
+				DEVELOPMENT_TEAM = A975LQD622;
 				INFOPLIST_FILE = CuriosityPacMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
