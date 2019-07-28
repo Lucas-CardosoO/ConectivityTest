@@ -29,14 +29,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         
         self.startHosting()
         
-        // MOSTRAR TELA INICIAL
-        
-        self.scene.scaleMode = .aspectFill
-        self.mySKView.presentScene(self.scene)
-        
-        self.mySKView.ignoresSiblingOrder = true
-        self.mySKView.showsFPS = true
-        self.mySKView.showsNodeCount = true
+        startGameScene()
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture(gesture:)))
         swipeLeft.direction = .left
@@ -54,6 +47,19 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
 
+    }
+    
+    func startGameScene() {
+        // MOSTRAR TELA INICIAL
+        self.scene = GameScene(fileNamed: "GameScene")!
+        self.scene.scaleMode = .aspectFill
+        self.mySKView.presentScene(self.scene)
+        
+        scene.endGameFunction = presentEndGameAlert
+        
+        self.mySKView.ignoresSiblingOrder = true
+        self.mySKView.showsFPS = true
+        self.mySKView.showsNodeCount = true
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
@@ -125,6 +131,14 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     func startHosting() {
         mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: mcSession)
         mcAdvertiserAssistant.start()
+    }
+    
+    func presentEndGameAlert(winner: String) {
+        let alert = UIAlertController(title: "Game Over", message: "O vencedor é " + winner, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
+            self.startGameScene()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
