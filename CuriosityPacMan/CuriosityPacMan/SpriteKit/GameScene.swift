@@ -17,12 +17,14 @@ class GameScene: SKScene {
     
     private lazy var map: SKTileMapNode = childNode(withName: "TileMap") as! SKTileMapNode
     
-    private var dirMoveP1: Direction
-    private var dirMoveP2 = ""
-    private var dirMoveBot = ""
+    private var dirMoveP1: Direction = .none
+    private var dirMoveP2: Direction = .none
+    private var dirMoveBot: Direction = .none
     
     override func didMove(to view: SKView) {
         print("print")
+        self.moveToNextTileP1(next: dirMoveP1)
+        self.moveToNextTileP2(next: dirMoveP2)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -50,10 +52,18 @@ class GameScene: SKScene {
             movePos.x += 64
         case .up:
             movePos.y += 64
+        case .none:
+            break
         }
         
         if tileCheck(movePos) {
-            self.p1.run(SKAction.move(to: movePos, duration: 0.3))
+            self.p1.run(SKAction.move(to: movePos, duration: playerMovementTime)) {
+                self.moveToNextTileP1(next: self.dirMoveP1)
+            }
+        } else {
+            self.p1.run(SKAction.wait(forDuration: playerMovementTime)) {
+                self.moveToNextTileP1(next: self.dirMoveP1)
+            }
         }
     }
     
@@ -70,13 +80,27 @@ class GameScene: SKScene {
             movePos.x += 64
         case .up:
             movePos.y += 64
+        case .none:
+            break
         }
         
         if tileCheck(movePos) {
-            self.p2.run(SKAction.move(to: movePos, duration: 0.3))
+            self.p2.run(SKAction.move(to: movePos, duration: playerMovementTime)) {
+                self.moveToNextTileP2(next: self.dirMoveP2)
+            }
+        } else {
+            self.p2.run(SKAction.wait(forDuration: playerMovementTime)) {
+                self.moveToNextTileP2(next: self.dirMoveP2)
+            }
         }
     }
     
+    func setP1Direction(direction: Direction) {
+        self.dirMoveP1 = direction
+    }
     
+    func setP2Direction(direction: Direction) {
+        self.dirMoveP2 = direction
+    }
 }
 
