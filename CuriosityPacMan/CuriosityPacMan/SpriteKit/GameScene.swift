@@ -31,6 +31,9 @@ class GameScene: SKScene {
     private var currDirP2: Direction = .none
     private var dirMoveBot: Direction = .none
     
+    var catSound = SKAction.playSoundFileNamed("cat.mp3", waitForCompletion: false)
+    var peiSound = SKAction.playSoundFileNamed("pei.mp3", waitForCompletion: false)
+
     override func didMove(to view: SKView) {
         print("print")
         self.moveToNextTileP1()
@@ -39,6 +42,7 @@ class GameScene: SKScene {
         self.moveBot(bot1, dirMoveBot)
         self.moveBot(bot2, dirMoveBot)
         self.collisionHandler()
+        
     }
     
     func checkPlayerBotCollision(_ player: SKSpriteNode, _ currBot: SKSpriteNode) {
@@ -49,6 +53,8 @@ class GameScene: SKScene {
         
         if (checkCollision(player.position, currBot.position)) {
             currBot.removeFromParent()
+            
+            run(peiSound)
             
             if player == p1 {
                 let playerScore: Int = Int(p1Score.text!)! + 1
@@ -69,6 +75,7 @@ class GameScene: SKScene {
     
     func collisionHandler() {
         if (checkCollision(cat.position, bot.position)) {
+            run(catSound)
             cat.removeFromParent()
             self.endGameFunction("a Inquisição Espanhola")
         }
@@ -91,12 +98,12 @@ class GameScene: SKScene {
     }
     
     func checkCollision(_ a: CGPoint, _ b: CGPoint) -> Bool {
+        
         let columnA = map.tileColumnIndex(fromPosition: a)
         let rowA = map.tileRowIndex(fromPosition: a)
         
         let columnB = map.tileColumnIndex(fromPosition: b)
         let rowB = map.tileRowIndex(fromPosition: b)
-        
         return (columnA == columnB) && (rowA == rowB)
     }
     
