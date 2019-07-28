@@ -9,13 +9,15 @@
 import Foundation
 
 let serviceType = "hws-kb"
+let playerMovementTime = 0.2
+let botMovementTime = 0.1
 
-
-enum Direction{
-    case left
-    case right
-    case up
-    case down
+enum Direction: Int{
+    case none = 0
+    case left = 1
+    case right = 2
+    case up = 3
+    case down = 4
     
     static func fromString(side: String) -> Direction?{
         switch side {

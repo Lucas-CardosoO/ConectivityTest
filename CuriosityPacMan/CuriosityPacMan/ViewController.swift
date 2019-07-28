@@ -59,21 +59,19 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
             print("Swipe Right")
-            self.scene.moveToNextTileP1(next: .right)
+            self.scene.setP1Direction(direction: .right)
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
             print("Swipe Left")
-            self.scene.moveToNextTileP1(next: .left)
-            
+            self.scene.setP1Direction(direction: .left)
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
             print("Swipe Up")
-            self.scene.moveToNextTileP1(next: .up)
-            
+            self.scene.setP1Direction(direction: .up)
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
             print("Swipe Down")
-            self.scene.moveToNextTileP1(next: .down)
+            self.scene.setP1Direction(direction: .down)
         }
     }
     
@@ -97,7 +95,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         if let command = String(data: data, encoding: .utf8){
             DispatchQueue.main.async { [unowned self] in
                 if let side = Direction.fromString(side: command){
-                    self.scene.moveToNextTileP2(next: side)
+                    self.scene.setP2Direction(direction: side)
                 }
                 print(command)
             }
