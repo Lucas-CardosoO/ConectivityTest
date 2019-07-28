@@ -32,7 +32,5 @@ enum Direction: Int{
         default:
             return nil
         }
-        
-        return nil
     }
 }

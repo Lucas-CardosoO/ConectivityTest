@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     lazy var mcBrowser = MCBrowserViewController(serviceType: serviceType, session: mcSession)
     
     // UI
+    @IBOutlet weak var backgroundView: UIImageView!
     @IBOutlet weak var labelSwipe: UILabel!
     @IBOutlet weak var upImage: UIImageView!
     @IBOutlet weak var downImage: UIImageView!

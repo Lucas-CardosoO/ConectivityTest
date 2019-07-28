@@ -20,6 +20,8 @@
 		A134200922EE256E0051757A /* medievalPacMan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A134200822EE256E0051757A /* medievalPacMan.mp3 */; };
 		A134200C22EE265F0051757A /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A134200A22EE265F0051757A /* cat.mp3 */; };
 		A134200D22EE265F0051757A /* pei.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A134200B22EE265F0051757A /* pei.mp3 */; };
+		52D90CCC22EE115800EF695E /* silkscreen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52D90CCB22EE115800EF695E /* silkscreen.ttf */; };
+		52D90CCE22EE133C00EF695E /* silkscreenbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52D90CCD22EE133C00EF695E /* silkscreenbold.ttf */; };
 		A1FDD70222ECDCEE00AF453E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70122ECDCEE00AF453E /* AppDelegate.swift */; };
 		A1FDD70422ECDCEE00AF453E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70322ECDCEE00AF453E /* ViewController.swift */; };
 		A1FDD70722ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1FDD70522ECDCEE00AF453E /* CuriosityPacMan.xcdatamodeld */; };
@@ -42,6 +44,8 @@
 		A134200822EE256E0051757A /* medievalPacMan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = medievalPacMan.mp3; sourceTree = "<group>"; };
 		A134200A22EE265F0051757A /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
 		A134200B22EE265F0051757A /* pei.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pei.mp3; sourceTree = "<group>"; };
+		52D90CCB22EE115800EF695E /* silkscreen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = silkscreen.ttf; sourceTree = "<group>"; };
+		52D90CCD22EE133C00EF695E /* silkscreenbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = silkscreenbold.ttf; sourceTree = "<group>"; };
 		A1FDD6FE22ECDCEE00AF453E /* CuriosityPacMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosityPacMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FDD70122ECDCEE00AF453E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FDD70322ECDCEE00AF453E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 		1505938122ECDEE0008CA14F /* CuriosityPacMan_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				52D90CCA22EE114200EF695E /* Resources */,
 				1505938222ECDEE0008CA14F /* AppDelegate.swift */,
 				1505938422ECDEE0008CA14F /* ViewController.swift */,
 				1505938622ECDEE0008CA14F /* Main.storyboard */,
@@ -90,6 +95,15 @@
 				15B2A35522ED12D200667C70 /* MyTileSet.sks */,
 			);
 			path = SpriteKit;
+			sourceTree = "<group>";
+		};
+		52D90CCA22EE114200EF695E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52D90CCB22EE115800EF695E /* silkscreen.ttf */,
+				52D90CCD22EE133C00EF695E /* silkscreenbold.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A1FDD6F522ECDCEE00AF453E = {
@@ -216,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1505938D22ECDEE2008CA14F /* LaunchScreen.storyboard in Resources */,
+				52D90CCC22EE115800EF695E /* silkscreen.ttf in Resources */,
 				1505938A22ECDEE2008CA14F /* Assets.xcassets in Resources */,
+				52D90CCE22EE133C00EF695E /* silkscreenbold.ttf in Resources */,
 				1505938822ECDEE0008CA14F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKR9MLJ8T7;
+				DEVELOPMENT_TEAM = JM6RH6V5Z9;
 				INFOPLIST_FILE = CuriosityPacMan_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,7 +333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKR9MLJ8T7;
+				DEVELOPMENT_TEAM = JM6RH6V5Z9;
 				INFOPLIST_FILE = CuriosityPacMan_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKR9MLJ8T7;
 				INFOPLIST_FILE = CuriosityPacMan/Info.plist;
@@ -459,6 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = academy.abigos.CuriosityPacMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -469,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKR9MLJ8T7;
 				INFOPLIST_FILE = CuriosityPacMan/Info.plist;
@@ -478,6 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = academy.abigos.CuriosityPacMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
